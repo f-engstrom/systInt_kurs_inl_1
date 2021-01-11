@@ -1,0 +1,19 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  freakyfashionservicesbasket:
+    image: freakyfashionservicesbasket
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:80
+    depends_on:
+      - redis
+  
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
