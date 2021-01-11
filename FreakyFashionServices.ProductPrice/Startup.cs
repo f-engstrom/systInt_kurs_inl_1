@@ -1,13 +1,11 @@
-using FreakyFashionServices.Catalog.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace FreakyFashionServices.Catalog
+namespace FreakyFashionServices.ProductPrice
 {
     public class Startup
     {
@@ -22,15 +20,10 @@ namespace FreakyFashionServices.Catalog
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("FreakyFashionDatabase"));
-            });
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FreakyFashionServices.Catalog", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FreakyFashionServices.ProductPrice", Version = "v1" });
             });
         }
 
@@ -41,7 +34,7 @@ namespace FreakyFashionServices.Catalog
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FreakyFashionServices.Catalog v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FreakyFashionServices.ProductPrice v1"));
             }
 
             app.UseHttpsRedirection();

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace FreakyFashionServices.Catalog
+namespace FreakyFashionServices.ProductPrice
 {
     public class Program
     {

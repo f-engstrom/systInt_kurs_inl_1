@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using FreakyFashionServices.Catalog.Data;
 using FreakyFashionServices.Catalog.Data.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace FreakyFashionServices.Catalog.Controllers
 {
