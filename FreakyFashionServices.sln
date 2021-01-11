@@ -6,6 +6,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreakyFashionServices.Baske
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreakyFashionServices.ProductPrice", "FreakyFashionServices.ProductPrice\FreakyFashionServices.ProductPrice.csproj", "{ED343A46-94A5-4EBD-8A40-C275B25B3403}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreakyFashionServices.OrderService.Producer", "FreakyFashionServices.OrderService.Producer\FreakyFashionServices.OrderService.Producer.csproj", "{DA3A17B9-F4B7-4FA1-8396-CDD4454DECE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreakyFashionServices.Shared", "FreakyFashionServices.Shared\FreakyFashionServices.Shared.csproj", "{6B27F821-DBF3-4088-BE20-195B071EAB21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreakyFashionServices.OrderService.Consumer", "FreakyFashionServices.OrderService.Consumer\FreakyFashionServices.OrderService.Consumer.csproj", "{0EB02E30-C8A2-4723-AD42-3F8DF442C919}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +30,17 @@ Global
 		{ED343A46-94A5-4EBD-8A40-C275B25B3403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED343A46-94A5-4EBD-8A40-C275B25B3403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED343A46-94A5-4EBD-8A40-C275B25B3403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA3A17B9-F4B7-4FA1-8396-CDD4454DECE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA3A17B9-F4B7-4FA1-8396-CDD4454DECE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA3A17B9-F4B7-4FA1-8396-CDD4454DECE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA3A17B9-F4B7-4FA1-8396-CDD4454DECE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B27F821-DBF3-4088-BE20-195B071EAB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B27F821-DBF3-4088-BE20-195B071EAB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B27F821-DBF3-4088-BE20-195B071EAB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B27F821-DBF3-4088-BE20-195B071EAB21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB02E30-C8A2-4723-AD42-3F8DF442C919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB02E30-C8A2-4723-AD42-3F8DF442C919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB02E30-C8A2-4723-AD42-3F8DF442C919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB02E30-C8A2-4723-AD42-3F8DF442C919}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
