@@ -1,7 +1,7 @@
-using FreakyFashionServices.Catalog.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Order = FreakyFashionServices.OrderService.Consumer.Data.Models.Order;
 
-namespace FreakyFashionServices.Catalog.Data
+namespace FreakyFashionServices.OrderService.Consumer.Data
 {
     public class ApplicationDbContext : DbContext
     {
@@ -10,12 +10,11 @@ namespace FreakyFashionServices.Catalog.Data
         {
         }
 
-        internal DbSet<Item> Items { get; set; }
+        internal DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Item>().HasData(new Item(1, "Black T-Shirt", "lorem ipsum", 299, 12));
         }
     }
 }

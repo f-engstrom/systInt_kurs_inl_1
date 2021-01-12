@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using FreakyFashionServices.Shared;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace FreakyFashionServices.OrderService.Producer.Controllers
 {
@@ -22,9 +18,9 @@ namespace FreakyFashionServices.OrderService.Producer.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Post(Order order)
+        public async Task<IActionResult> Post(RabbitOrderMessage order)
         {
-            await _publishEndpoint.Publish<Order>(order);
+            await _publishEndpoint.Publish<RabbitOrderMessage>(order);
             return Ok();
         }
     }

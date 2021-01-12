@@ -1,6 +1,6 @@
 namespace FreakyFashionServices.Catalog.Data.Models
 {
-    internal class Item
+    public class Item
     {
         public Item(long id, string name, string description, long price, long availableStock)
         {

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using FreakyFashionServices.Catalog.Data.Models;
 
-namespace FreakyFashionServices.Shared
+namespace FreakyFashionServices.OrderService.Consumer.Data.Models
 {
-    public class RabbitOrderMessage
+    internal class Order
     {
+        public int Id { get; set; }
         public string CustomIdentifier { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

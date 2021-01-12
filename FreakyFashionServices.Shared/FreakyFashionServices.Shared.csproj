@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>FreakyFashionServices.Shared.Models</PackageId>
+    <PackageVersion>1.0.1</PackageVersion>
+    <Authors>Frans</Authors>
   </PropertyGroup>
 
 </Project>
