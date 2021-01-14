@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/order",
+      "DownstreamPathTemplate": "/api/order",
       "UpstreamPathTemplate": "/api/order",
       "UpstreamHttpMethod": [
         "Post"
@@ -14,7 +14,68 @@
         }
       ],
       "Key": "orderproducer"
+    },
+    {
+      "DownstreamPathTemplate": "/api/basket/{basketId}",
+      "UpstreamPathTemplate": "/api/basket/{basketId}",
+      "UpstreamHttpMethod": [
+        "Put"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "basket",
+          "Port": 80
+        }
+      ],
+      "Key": "basketput"
+    },
+    {
+      "DownstreamPathTemplate": "/api/basket/{basketId}",
+      "UpstreamPathTemplate": "/api/basket/{basketId}",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "basket",
+          "Port": 80
+        }
+      ],
+      "Key": "basketget"
+    },
+    {
+      "DownstreamPathTemplate": "/productprice",
+      "UpstreamPathTemplate": "/api/productprice",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productprice",
+          "Port": 80
+        }
+      ],
+      "Key": "productprice"
+    },
+    {
+      "DownstreamPathTemplate": "/api/catalog/items",
+      "UpstreamPathTemplate": "/api/catalog",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog",
+          "Port": 80
+        }
+      ],
+      "Key": "catalog"
     }
+    
   ],
   "GlobalConfiguration": {
     "BaseUrl":"http://localhost:5000"

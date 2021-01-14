@@ -21,6 +21,7 @@ namespace FreakyFashionServices.OrderService.Producer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddHttpClient();
 
             services.AddMassTransit(config =>
             {

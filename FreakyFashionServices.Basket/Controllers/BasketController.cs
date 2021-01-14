@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using FreakyFashionServices.Basket.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
@@ -20,6 +21,10 @@ namespace FreakyFashionServices.Basket.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, Data.Models.Basket basket)
         {
+
+            await Console.Out.WriteAsync($"Basket name {basket.Items[0].Name} basket desc {basket.Items[0].Description} price {basket.Items[0].Price} av stck {basket.Items[0].AvailableStock} ");
+
+            
             await _cache.SetRecordAsync(id.ToString(), basket);
 
 

@@ -1,4 +1,4 @@
-namespace FreakyFashionServices.Shared
+namespace FreakyFashionServices.OrderService.Producer.Models
 {
     public class Item
     {
@@ -11,8 +11,6 @@ namespace FreakyFashionServices.Shared
             AvailableStock = availableStock;
         }
 
-   
-
         public long Id { get; set; }
 
         public string Name { get; set; }
@@ -23,6 +21,4 @@ namespace FreakyFashionServices.Shared
 
         public long AvailableStock { get; set; }
     }
-    
-     
 }

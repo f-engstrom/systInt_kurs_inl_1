@@ -3,19 +3,32 @@
 version: "3.4"
 
 services:
-  db:
+  
+  catalogDb:
     image: "mcr.microsoft.com/mssql/server:2019-latest"
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Pass@Word1
     ports:
       - 1433:1433
+
+  orderDb:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pass@Word1
+    ports:
+      - 1434:1433      
   
   rabbit:
     image: rabbitmq:3-management
     ports:
       - 15672:15672
 
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
 
   orderconsumer:
     image: orderconsumer
@@ -25,7 +38,7 @@ services:
     ports:
       - 5673:80
     depends_on:
-      - db
+      - orderDb
       - rabbit
   
   orderproducer:
@@ -42,3 +55,28 @@ services:
         dockerfile: FreakyFashionServices.Gateway/Dockerfile
     ports:
       - 5000:80 
+        
+  productprice:
+    image: productprice
+    build:
+      context: .
+      dockerfile: FreakyFashionServices.ProductPrice/Dockerfile
+      
+  catalog:
+    image: catalog
+    build: 
+      context: .
+      dockerfile: FreakyFashionServices.Catalog/Dockerfile
+    depends_on:
+      - catalogDb
+      
+  basket:
+    image: basket
+    build:
+      context: .
+      dockerfile: FreakyFashionServices.Basket/Dockerfile
+  
+    depends_on:
+      - redis
+
+     

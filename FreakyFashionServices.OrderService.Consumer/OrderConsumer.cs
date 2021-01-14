@@ -29,7 +29,7 @@ namespace FreakyFashionServices.OrderService.Consumer
             order.LastName = context.Message.LastName;
             foreach (var item in context.Message.Items)
             {
-                Item tempItem = new Item(item.Name,item.Description,item.Price,item.AvailableStock);
+                var tempItem = new  FreakyFashionServices.OrderService.Consumer.Data.Models.Item(item.Name,item.Description,item.Price,item.AvailableStock);
                 order.Items.Add(tempItem);
             }
             

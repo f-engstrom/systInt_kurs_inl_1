@@ -5,9 +5,9 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["FreakyFashionServices.Basket.csproj", "./"]
+COPY ["FreakyFashionServices.Basket/FreakyFashionServices.Basket.csproj", "./"]
 RUN dotnet restore "FreakyFashionServices.Basket.csproj"
-COPY . .
+COPY ./FreakyFashionServices.Basket .
 WORKDIR "/src/."
 RUN dotnet build "FreakyFashionServices.Basket.csproj" -c Release -o /app/build
 

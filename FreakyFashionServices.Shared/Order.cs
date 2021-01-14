@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using FreakyFashionServices.Catalog.Data.Models;
 
 namespace FreakyFashionServices.Shared
 {

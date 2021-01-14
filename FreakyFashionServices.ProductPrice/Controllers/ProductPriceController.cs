@@ -21,21 +21,27 @@ namespace FreakyFashionServices.ProductPrice.Controllers
 
             foreach (var articleNr in splitProducts)
             {
-                ProductDto product = new ProductDto();
-                
-                product.Price = rng.Next(100, 2000);
-                product.ArticleNumber = articleNr;
+                if (!string.IsNullOrEmpty(articleNr))
+                {
+                    ProductDto product = new ProductDto();
 
-                productDtos.Add(product);
+                    Console.WriteLine($"article nr ${articleNr}");
+
+
+                    product.Price = rng.Next(100, 2000);
+                    product.ArticleNumber = Convert.ToInt32(articleNr.Trim().Normalize());
+
+                    productDtos.Add(product);
+                }
             }
 
             return productDtos;
         }
     }
 
-   public class ProductDto
+    public class ProductDto
     {
-        public string ArticleNumber { get; set; }
+        public int ArticleNumber { get; set; }
         public int Price { get; set; }
     }
 }

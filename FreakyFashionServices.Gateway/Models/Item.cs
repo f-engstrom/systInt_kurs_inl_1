@@ -1,4 +1,4 @@
-namespace FreakyFashionServices.Shared
+namespace FreakyFashionServices.Gateway.Models
 {
     public class Item
     {
@@ -10,8 +10,6 @@ namespace FreakyFashionServices.Shared
             Price = price;
             AvailableStock = availableStock;
         }
-
-   
 
         public long Id { get; set; }
 
