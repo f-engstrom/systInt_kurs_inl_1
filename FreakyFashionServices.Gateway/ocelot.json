@@ -1,0 +1,22 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/order",
+      "UpstreamPathTemplate": "/api/order",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orderproducer",
+          "Port": 80
+        }
+      ],
+      "Key": "orderproducer"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl":"http://localhost:5000"
+  }
+}
