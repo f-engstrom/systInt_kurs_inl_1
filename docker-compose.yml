@@ -78,5 +78,7 @@ services:
   
     depends_on:
       - redis
+    ports:
+    - 4999:80
 
      

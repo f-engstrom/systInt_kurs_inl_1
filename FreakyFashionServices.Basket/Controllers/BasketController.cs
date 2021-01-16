@@ -19,7 +19,7 @@ namespace FreakyFashionServices.Basket.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, Data.Models.Basket basket)
+        public async Task<ActionResult> Put(int id,[FromBody] Data.Models.Basket basket)
         {
 
             await Console.Out.WriteAsync($"Basket name {basket.Items[0].Name} basket desc {basket.Items[0].Description} price {basket.Items[0].Price} av stck {basket.Items[0].AvailableStock} ");
