@@ -74,6 +74,21 @@
         }
       ],
       "Key": "catalog"
+    },
+    {
+      "DownstreamPathTemplate": "/order",
+      "UpstreamPathTemplate": "/api/orders",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orderconsumer",
+          "Port": 80
+        }
+      ],
+      "Key": "orderconsumer"
     }
     
   ],

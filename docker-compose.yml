@@ -10,7 +10,7 @@ services:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Pass@Word1
     ports:
-      - 1433:1433
+      - 1434:1433
 
   orderDb:
     image: "mcr.microsoft.com/mssql/server:2019-latest"
@@ -18,7 +18,7 @@ services:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Pass@Word1
     ports:
-      - 1434:1433      
+      - 1433:1433      
   
   rabbit:
     image: rabbitmq:3-management
@@ -27,16 +27,12 @@ services:
 
   redis:
     image: redis
-    ports:
-      - 6379:6379
 
   orderconsumer:
     image: orderconsumer
     build:
       context: .
       dockerfile: FreakyFashionServices.OrderService.Consumer/Dockerfile
-    ports:
-      - 5673:80
     depends_on:
       - orderDb
       - rabbit
@@ -54,7 +50,7 @@ services:
         context: .
         dockerfile: FreakyFashionServices.Gateway/Dockerfile
     ports:
-      - 5000:80 
+      - 5000:80
         
   productprice:
     image: productprice
@@ -78,7 +74,5 @@ services:
   
     depends_on:
       - redis
-    ports:
-    - 4999:80
 
      
